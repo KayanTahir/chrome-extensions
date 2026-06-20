@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <span class="pulse"></span>
+      <div>
+        <h1>DevPeek</h1>
+        <p id="host">—</p>
+      </div>
+    </div>
+    <nav class="seg" role="tablist">
+      <button class="seg-btn active" data-view="net" role="tab">Network</button>
+      <button class="seg-btn" data-view="page" role="tab">Page Data</button>
+    </nav>
+  </header>
+
+  <!-- NETWORK -->
+  <section id="view-net" class="view active">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Filter by URL…" autocomplete="off" />
+      <div class="chips" id="method-chips">
+        <button class="chip active" data-m="ALL">All</button>
+        <button class="chip" data-m="GET">GET</button>
+        <button class="chip" data-m="POST">POST</button>
+        <button class="chip" data-m="PUT">PUT</button>
+        <button class="chip" data-m="PATCH">PATCH</button>
+        <button class="chip" data-m="DELETE">DEL</button>
+        <button class="chip" data-m="ERR">Errors</button>
+      </div>
+      <div class="tools">
+        <span id="count" class="count">0 calls</span>
+        <button id="export" class="btn ghost" title="Export all as JSON">Export</button>
+        <button id="clear" class="btn ghost" title="Clear captured calls">Clear</button>
+      </div>
+    </div>
+    <div id="net-list" class="list"></div>
+    <div id="net-empty" class="empty">
+      <p>No API calls captured yet.</p>
+      <small>Keep this popup open and interact with the page, or reload it. DevPeek records <code>fetch</code> and <code>XHR</code> requests with their response bodies.</small>
+    </div>
+  </section>
+
+  <!-- PAGE DATA -->
+  <section id="view-page" class="view">
+    <div class="grid">
+      <button class="act" data-act="info">Page info</button>
+      <button class="act" data-act="links">Links</button>
+      <button class="act" data-act="images">Images</button>
+      <button class="act" data-act="tables">Tables → CSV</button>
+      <button class="act" data-act="headings">Headings</button>
+      <button class="act" data-act="jsonld">JSON-LD</button>
+      <button class="act" data-act="selection">Selection</button>
+      <button class="act" data-act="text">All text</button>
+    </div>
+    <div class="out-head">
+      <span id="out-label" class="out-label">Pick a tool above</span>
+      <div class="tools">
+        <button id="out-copy" class="btn ghost" disabled>Copy</button>
+        <button id="out-dl" class="btn ghost" disabled>Download</button>
+      </div>
+    </div>
+    <pre id="out" class="out"></pre>
+  </section>
+  <div class="credit">Created by <b>Kayan Tahir</b></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

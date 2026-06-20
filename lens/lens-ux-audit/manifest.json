@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Lens — UI/UX Audit",
+  "version": "1.0.0",
+  "description": "One-click accessibility, readability, mobile and design-consistency audit of any page. Click a finding to highlight it on the page.",
+  "author": "Kayan Tahir",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Lens — UI/UX Audit",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}
