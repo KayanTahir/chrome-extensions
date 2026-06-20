@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <h1>Lens</h1>
+        <p id="host">scanning…</p>
+      </div>
+    </div>
+    <button id="rerun" class="btn">Re-scan</button>
+  </header>
+
+  <section id="score" class="score">
+    <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+      <circle class="ring-bg" cx="60" cy="60" r="52" />
+      <circle id="ring-fg" class="ring-fg" cx="60" cy="60" r="52"
+              stroke-dasharray="326.7" stroke-dashoffset="326.7" transform="rotate(-90 60 60)" />
+    </svg>
+    <div class="score-num"><span id="score-val">–</span><b id="score-grade"></b></div>
+    <div class="score-meta">
+      <span id="score-sub">Running audit…</span>
+      <div class="legend">
+        <span class="lg crit">critical</span>
+        <span class="lg ser">serious</span>
+        <span class="lg mod">moderate</span>
+        <span class="lg min">minor</span>
+      </div>
+    </div>
+  </section>
+
+  <div id="report" class="report"></div>
+
+  <footer class="foot">
+    <span id="stats" class="stats"></span>
+    <div class="ftools">
+      <button id="copy" class="btn ghost" disabled>Copy report</button>
+      <button id="download" class="btn ghost" disabled>Download .md</button>
+    </div>
+  </footer>
+  <div class="credit">Created by <b>Kayan Tahir</b></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
